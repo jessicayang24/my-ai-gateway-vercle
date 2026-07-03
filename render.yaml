@@ -1,6 +1,9 @@
 services:
   - type: web
     name: my-ai-gateway
-    runtime: python
+    env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: litellm --config config.yaml --host 0.0.0.0 --port $PORT
+    startCommand: uvicorn litellm.proxy.proxy_server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: LITELLM_MASTER_KEY
+        sync: false
