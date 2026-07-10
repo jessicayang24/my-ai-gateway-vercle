@@ -8,3 +8,5 @@ public/
 _multiconfig.yml
 source.root-owned-backup/
 source.root-owned-backup-*/
+.github.root-owned-backup/
+.github.root-owned-backup-*/
